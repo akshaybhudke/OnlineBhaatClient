@@ -1,0 +1,52 @@
+<div class='panel panel-primary' *ngIf='person'>
+    <div class='panel-heading'>
+        {{pageTitle + ': ' + person.name}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Name:</div>
+                    <div class='col-md-6'>{{person.name | uppercase}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Father Name:</div>
+                    <div class='col-md-6'>{{person.fatherName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Description:</div>
+                    <div class='col-md-6'>{{person.description}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>City:</div>
+                    <div class='col-md-6'>{{person.city}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>BirthDate:</div>
+                    <div class='col-md-6'>{{person.birthDate}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Death Date:</div>
+                    <div class='col-md-6'>
+                        person.deathDate
+                    </div>
+                </div>
+            </div>
+
+            <div class='col-md-6'>
+                <img class='center-block img-responsive' 
+                     [style.width.px]='200' 
+                     [style.margin.px]='2' 
+                     [src]='person.imageUrl'
+                     [title]='person.name'>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>
